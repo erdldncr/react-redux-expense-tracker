@@ -1,21 +1,23 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
- const TransactionList = (props) => {
+ const TransactionList = ({transactionList}) => {
     return (
         <>
              <h3>History</h3>
       <ul  className="list">
-         <li className="minus">
-          Cash <span>-$400</span><button className="delete-btn">x</button>
-        </li> 
+         {transactionList.map(transaction=>(
+           <li  className="minus">
+           Cash <span>-$400</span><button className="delete-btn">x</button>
+         </li> 
+         ))}
       </ul>
         </>
     )
 }
 
-const mapStateToProps = (state) => ({
-    
+const mapStateToProps = ({transactionList}) => ({
+    transactionList
 })
 
 const mapDispatchToProps = {
