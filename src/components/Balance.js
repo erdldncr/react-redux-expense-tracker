@@ -1,18 +1,21 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
- const Balance = (props) => {
+ const Balance = ({transactionList}) => {
     return (
         <>
             <h4>Your Balance</h4>
-         <h1 >$0.00</h1>
+         <h1>{
+            transactionList
+            .reduce((sum,transaction)=>sum+transaction.amount,0)
+          }</h1>
 
         </>
     )
 }
 
-const mapStateToProps = (state) => ({
-    
+const mapStateToProps = ({transactionList}) => ({
+    transactionList
 })
 
 const mapDispatchToProps = {
