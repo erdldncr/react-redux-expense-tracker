@@ -1,4 +1,5 @@
 {
+  "homepage": "http://erdldncr.github.io/react-redux-expense-tracker",
   "name": "react-redux-expense-tracker",
   "version": "0.1.0",
   "private": true,
